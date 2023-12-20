@@ -1,0 +1,127 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+ul.messages {
+  list-style: none;
+  padding: 0;
+}
+
+ul.messages li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+ul.messages li.success {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+ul.messages li.error {
+  background-color: #f44336;
+  color: #fff;
+}
+
+a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: blue;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #4caf50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+ul.downloads {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+ul.downloads li {
+  margin-bottom: 10px;
+}
+
+ul.downloads span {
+  display: inline-block;
+  width: 150px; /* Adjust as needed */
+}
+
+ul.downloads a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+ul.downloads a:hover {
+  background-color: #45a049;
+}

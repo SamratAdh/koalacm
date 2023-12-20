@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='koala_logo.png') }}"
+    />
+
+    <title>Login - Koala Certificate Manager</title>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="{{ url_for('static', filename='koala_logo.png') }}"
+        alt="Koala Logo"
+        class="logo"
+        style="width: 200px"
+      />
+    </div>
+    <h1>Login</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <form method="post" action="{{ url_for('login') }}">
+      <label for="username">Username:</label>
+      <input type="text" name="username" required />
+      <label for="password">Password:</label>
+      <input type="password" name="password" required />
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>
