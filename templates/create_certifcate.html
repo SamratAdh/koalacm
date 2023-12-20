@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='koala_logo.png') }}"
+    />
+    <title>Create Certificate - Koala Certificate Manager</title>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="{{ url_for('static', filename='koala_logo.png') }}"
+        alt="Koala Logo"
+        class="logo"
+        style="width: 200px"
+      />
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul class="downloads">
+        {% for message in messages %}
+        {% if 'Private Key' in message %}
+        <li>
+          <span>Private Key:</span>
+          <a href="{{ url_for('download', filename=message.split(":")[1].strip()) }}" download>Download</a>
+        </li>
+        {% elif 'X.509 Certificate' in message %}
+        <li>
+          <span>X.509 Certificate:</span>
+          <a href="{{ url_for('download', filename=message.split(":")[1].strip()) }}" download>Download</a>
+        </li>
+        {% elif 'CSR' in message %}
+        <li>
+          <span>CSR:</span>
+          <a href="{{ url_for('download', filename=message.split(":")[1].strip()) }}" download>Download</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+      <h1>Create Certificate</h1>
+      <form method="post" action="{{ url_for('create_certificate') }}">
+        <label for="common_name">Common Name:</label>
+        <input type="text" name="common_name" required />
+        <label for="organization">Organization:</label>
+        <input type="text" name="organization" required />
+        <label for="valid_days">Valid Days:</label>
+        <input type="number" name="valid_days" required />
+        <label for="passphrase">Passphrase (optional):</label>
+        <input type="password" name="passphrase" />
+        <label for="bits">Bits to generate the private key:</label>
+        <select name="bits" required>
+          <option value="2048">2048 bits</option>
+          <option value="4096">4096 bits</option>
+        </select>
+        <label for="digest_algorithm">Digest Algorithm:</label>
+        <select name="digest_algorithm" required>
+          <option value="sha256">SHA256</option>
+          <option value="sha384">SHA384</option>
+          <option value="sha512">SHA512</option>
+        </select>
+        <button type="submit">Generate Certificate</button>
+      </form>
+    </div>
+  </body>
+</html>
