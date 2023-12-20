@@ -43,7 +43,7 @@ Welcome to the GitHub repository KoalaCM a collaborative project undertaken duri
   - **index.html:** Home page.
   - **login.html:** Login page.
   - **create_certificate.html:** Page for creating certificates.
-- **uploads:** Folder to store generated certificates.
+- **uploads:** Folder to store generated certificates. Recommended to manually make it.
 
 ## Running the Application
 
