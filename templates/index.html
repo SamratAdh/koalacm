@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='koala_logo.png') }}"
+    />
+    <title>Koala Certificate Manager</title>
+  </head>
+  <body>
+    <h1>Welcome to our Startup prototype!</h1>
+    <div class="container">
+      <img
+        src="{{ url_for('static', filename='koala_logo.png') }}"
+        alt="Koala Logo"
+        class="logo"
+        style="width: 200px"
+      />
+    </div>
+    <a href="{{ url_for('login') }}">Login</a>
+  </body>
+</html>
