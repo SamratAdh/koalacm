@@ -21,10 +21,6 @@ Welcome to the GitHub repository KoalaCM a collaborative project undertaken duri
 3. **Certificate Download:**
    - After generating a certificate, users can individually download the private key, X.509 certificate, and CSR (Certificate Signing Request).
 
-4. **Styling and User Feedback:**
-   - The application has a clean and responsive user interface.
-   - Success and error messages are displayed to provide feedback on the certificate generation process.
-
 ## Usage
 
 1. **Login:**
@@ -65,5 +61,7 @@ Welcome to the GitHub repository KoalaCM a collaborative project undertaken duri
 ## Future Improvements
 
 - Integration with Let's Encrypt for CA-signed certificates.
-- Enhanced user interface and error handling.
 - Additional security features and certificate options.
+- Styling and feedback:
+   - The application has a clean and responsive user interface.
+   - Success and error messages are displayed to provide feedback on the certificate generation process.
